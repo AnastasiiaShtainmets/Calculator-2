@@ -29,24 +29,23 @@ public class MainActivity extends AppCompatActivity {
         String s1 = e1.getText().toString();
         String s2 = e2.getText().toString();
 
-        if (s1.equals("") || s2.equals("")) {
-            String result = "Данные не корректные";
-            t1.setText(result);
-            System.out.println(result);
-        } else {
+        try {
             num1 = Integer.parseInt(s1);
             num2 = Integer.parseInt(s2);
-
-
-
             int sum = num1 + num2;
-
             Intent intent = new Intent(this, MainActivity2.class);
             intent.putExtra("key1", num1);
             intent.putExtra("key2", num2);
             intent.putExtra("sum", sum);
             startActivity(intent);
+        } catch (Exception e) {
+            String result = "Данные не корректные";
+            t1.setText(result);
+            System.out.println(result);
         }
+
+
+
     }
 }
 
