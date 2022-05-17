@@ -1,7 +1,9 @@
 package com.example.calculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,7 +27,7 @@ public class MainActivity2 extends AppCompatActivity {
         textView3 = findViewById(R.id.sum);
 
         Bundle arguments = getIntent().getExtras();
-
+        
         if (arguments != null) {
             num1 = arguments.getInt("key1");
             textView.setText(String.valueOf(num1));
@@ -39,6 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
             if (sum < 0) {
                 textView3.setText("(" + sum + ")");
             }
-            }
         }
+
+    }
 }

@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText e1, e2;
-    TextView t1;
+    TextView t1,t2;
     int num1, num2;
 
     @Override
@@ -38,10 +39,12 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("key2", num2);
             intent.putExtra("sum", sum);
             startActivity(intent);
+
         } catch (Exception e) {
-            String result = "Данные не корректные";
-            t1.setText(result);
-            System.out.println(result);
+            Toast.makeText(getApplicationContext(), "Данные не корректные", Toast.LENGTH_LONG).show();
+//            String result = "Данные не корректные";
+//            t1.setText(result);
+//            System.out.println(result);
         }
 
 
